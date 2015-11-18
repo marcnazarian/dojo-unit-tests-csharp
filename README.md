@@ -2,6 +2,8 @@
 Dojo to introduce unit tests in C# with NUnit
 
 
+## What is it?
+
 This small project aims to discover unit tests in C# with NUnit.
 
 
@@ -15,6 +17,8 @@ The latest version is step9: 2 classes, 1 test class, 100% covered.
 
 You can run the tests.
 
+
+## Details
 
 You can also checkout the different steps to run the dojo from beginning:
 

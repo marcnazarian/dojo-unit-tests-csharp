@@ -1,0 +1,9 @@
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\ShoppingBasket\bin\Debug\ShoppingBasket.dll
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\ShoppingBasket\bin\Debug\ShoppingBasket.pdb
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\ShoppingBasket\obj\Debug\OnlineShopping.csprojResolveAssemblyReference.cache
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\ShoppingBasket\obj\Debug\ShoppingBasket.dll
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\ShoppingBasket\obj\Debug\ShoppingBasket.pdb
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\OnlineShopping\bin\Debug\ShoppingBasket.dll
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\OnlineShopping\bin\Debug\ShoppingBasket.pdb
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\OnlineShopping\obj\Debug\ShoppingBasket.dll
+D:\_dev_\dojos\dojo-unit-tests-csharp\DojoUnitTestsCSharp\OnlineShopping\obj\Debug\ShoppingBasket.pdb

@@ -20,16 +20,29 @@ namespace OnlineShoppingTests
     public class ShoppingBasketTests
     {
         /// <summary>
+        /// The shopping basket.
+        /// </summary>
+        private ShoppingBasket shoppingBasket;
+
+        /// <summary>
+        /// The set up.
+        /// </summary>
+        [SetUp]
+        public void SetUp()
+        {
+            this.shoppingBasket = new ShoppingBasket();
+        }
+
+        /// <summary>
         /// The basket should contain 0 items after initialization.
         /// </summary>
         [Test]
         public void BasketShouldContainZeroItemsAfterInitialization()
         {
             // arrange
-            ShoppingBasket shoppingBasket = new ShoppingBasket();
             
             // act
-            int numberOfItems = shoppingBasket.GetNumberOfItems();
+            int numberOfItems = this.shoppingBasket.GetNumberOfItems();
 
             // assert
             Assert.That(numberOfItems, Is.EqualTo(0), "Number of items into basket should be 0");
@@ -42,10 +55,9 @@ namespace OnlineShoppingTests
         public void BasketShouldBeEmptyAfterInitialization()
         {
             // arrange
-            ShoppingBasket shoppingBasket = new ShoppingBasket();
 
             // act
-            bool isBasketEmpty = shoppingBasket.IsEmpty();
+            bool isBasketEmpty = this.shoppingBasket.IsEmpty();
 
             // assert
             Assert.That(isBasketEmpty, Is.True, "Basket should be empty");
@@ -58,14 +70,13 @@ namespace OnlineShoppingTests
         public void CanAddAnItemIntoMyBasket()
         {
             // arrange
-            ShoppingBasket shoppingBasket = new ShoppingBasket();
             ShoppingItem myItem = new ShoppingItem();
 
             // act
-            shoppingBasket.AddItem(myItem);
+            this.shoppingBasket.AddItem(myItem);
 
             // assert
-            Assert.That(shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
+            Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
         }
     }
 }

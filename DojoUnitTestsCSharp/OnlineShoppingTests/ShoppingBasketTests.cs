@@ -23,7 +23,7 @@ namespace OnlineShoppingTests
         [Test]
         public void DummyTest()
         {
-            Assert.That(5, Is.EqualTo(6), "I was expecting that 5 should be equal to 6 :)");
+            Assert.That(5, Is.EqualTo(5), "I was expecting that 5 should be equal to 5. Maths have changed?");
         }
     }
 }

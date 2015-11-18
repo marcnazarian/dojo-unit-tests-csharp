@@ -11,6 +11,8 @@ namespace OnlineShoppingTests
 {
     using NUnit.Framework;
 
+    using ShoppingBasket;
+
     /// <summary>
     /// The shopping basket tests.
     /// </summary>
@@ -18,12 +20,35 @@ namespace OnlineShoppingTests
     public class ShoppingBasketTests
     {
         /// <summary>
-        /// The dummy test.
+        /// The basket should contain 0 items after initialization.
         /// </summary>
         [Test]
-        public void DummyTest()
+        public void BasketShouldContainZeroItemsAfterInitialization()
         {
-            Assert.That(5, Is.EqualTo(5), "I was expecting that 5 should be equal to 5. Maths have changed?");
+            // arrange
+            ShoppingBasket shoppingBasket = new ShoppingBasket();
+            
+            // act
+            int numberOfItems = shoppingBasket.GetNumberOfItems();
+
+            // assert
+            Assert.That(numberOfItems, Is.EqualTo(0), "Number of items into basket should be 0");
+        }
+
+        /// <summary>
+        /// The basket should be empty after initialization.
+        /// </summary>
+        [Test]
+        public void BasketShouldBeEmptyAfterInitialization()
+        {
+            // arrange
+            ShoppingBasket shoppingBasket = new ShoppingBasket();
+
+            // act
+            bool isBasketEmpty = shoppingBasket.IsEmpty();
+
+            // assert
+            Assert.That(isBasketEmpty, Is.True, "Basket should be empty");
         }
     }
 }

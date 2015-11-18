@@ -78,5 +78,25 @@ namespace OnlineShoppingTests
             // assert
             Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
         }
+
+        /// <summary>
+        /// I can get the number of items in my basket.
+        /// </summary>
+        [Test]
+        public void CanGetTheNumberOfItemsInMyBasket()
+        {
+            // arrange
+            ShoppingItem myItem1 = new ShoppingItem();
+            ShoppingItem myItem2 = new ShoppingItem();
+            ShoppingItem myItem3 = new ShoppingItem();
+
+            // act
+            this.shoppingBasket.AddItem(myItem1);
+            this.shoppingBasket.AddItem(myItem2);
+            this.shoppingBasket.AddItem(myItem3);
+
+            // assert
+            Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(3), "Basket should contain 3 items");
+        }
     }
 }

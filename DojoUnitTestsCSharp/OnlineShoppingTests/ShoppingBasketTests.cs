@@ -142,5 +142,27 @@ namespace OnlineShoppingTests
             // assert
             Assert.That(this.shoppingBasket.GetPrice(), Is.EqualTo(160.39).Within(0.0001), "Total price of the basket should be 160.39 (150.39 + 10 for shipping)");
         }
+
+        /// <summary>
+        /// The can get the description of my basket.
+        /// </summary>
+        [Test]
+        public void CanGetTheDescriptionOfMyBasket()
+        {
+            // arrange
+            ShoppingItem item1 = new ShoppingItem { Price = 5.21, Name = "banana" };
+            ShoppingItem item2 = new ShoppingItem { Price = 0.18, Name = "apple" };
+            ShoppingItem item3 = new ShoppingItem { Price = 145, Name = "orange" };
+
+            // act
+            this.shoppingBasket.AddItem(item1);
+            this.shoppingBasket.AddItem(item2);
+            this.shoppingBasket.AddItem(item3);
+
+            // assert
+            Assert.That(this.shoppingBasket.GetContentDescription(), Is.StringContaining("banana: $5.21"));
+            Assert.That(this.shoppingBasket.GetContentDescription(), Is.StringContaining("apple: $0.18"));
+            Assert.That(this.shoppingBasket.GetContentDescription(), Is.StringContaining("orange: $145"));
+        }
     }
 }

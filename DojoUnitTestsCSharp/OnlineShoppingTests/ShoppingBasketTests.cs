@@ -50,5 +50,22 @@ namespace OnlineShoppingTests
             // assert
             Assert.That(isBasketEmpty, Is.True, "Basket should be empty");
         }
+
+        /// <summary>
+        /// The can add an item into my basket.
+        /// </summary>
+        [Test]
+        public void CanAddAnItemIntoMyBasket()
+        {
+            // arrange
+            ShoppingBasket shoppingBasket = new ShoppingBasket();
+            ShoppingItem myItem = new ShoppingItem();
+
+            // act
+            shoppingBasket.AddItem(myItem);
+
+            // assert
+            Assert.That(shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
+        }
     }
 }

@@ -87,6 +87,9 @@ namespace OnlineShoppingTests
 
             // assert
             Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
+
+            // verify
+            this.inventoryServiceMock.Verify(i => i.RemoveItem(myItem), Times.Once());
         }
 
         /// <summary>
@@ -104,6 +107,9 @@ namespace OnlineShoppingTests
 
             // assert
             Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(0), "Basket should not contain any item because item was not available");
+
+            // verify
+            this.inventoryServiceMock.Verify(i => i.RemoveItem(myItem), Times.Never);
         }
 
         /// <summary>
@@ -133,6 +139,9 @@ namespace OnlineShoppingTests
 
             // assert
             Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(2), "Basket should contain only 2 items because other 2 are out of stock");
+
+            // verify
+            this.inventoryServiceMock.Verify(i => i.RemoveItem(It.IsAny<ShoppingItem>()), Times.Exactly(2));
         }
 
         /// <summary>

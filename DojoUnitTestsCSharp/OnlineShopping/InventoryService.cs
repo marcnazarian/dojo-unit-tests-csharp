@@ -30,5 +30,17 @@ namespace ShoppingBasket
             DatabaseContext databaseContext = new DatabaseContext();
             return databaseContext.Inventory.Any(item => item.Id == shoppingItem.Id);
         }
+
+        /// <summary>
+        /// The remove item.
+        /// </summary>
+        /// <param name="shoppingItem">
+        /// The shopping item.
+        /// </param>
+        public void RemoveItem(ShoppingItem shoppingItem)
+        {
+            DatabaseContext databaseContext = new DatabaseContext();
+            databaseContext.Inventory.Remove(shoppingItem);
+        }
     }
 }

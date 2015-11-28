@@ -54,6 +54,7 @@ namespace ShoppingBasket
             if (this.inventoryService.IsItemAvailable(shoppingItem))
             {
                 this.items.Add(shoppingItem);
+                this.inventoryService.RemoveItem(shoppingItem);
             }
         }
 

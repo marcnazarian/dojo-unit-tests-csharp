@@ -26,7 +26,7 @@ You can also checkout the different steps to run the dojo from beginning:
 
 ## Details
 
-### Part 1: Introduction to unit tests
+### Part 1: [Introduction to unit tests](README_Part1.md)
 
 **Step 0**: initial project, only code, no tests.
 
@@ -69,7 +69,7 @@ You can also checkout the different steps to run the dojo from beginning:
 `git checkout step9`
 
 
-### Part 2: Introduction to mocks with moq
+### Part 2: [Introduction to mocks with moq](README_Part2.md)
 
 **Step 10**: Introduced access to database. Unit tests fail.
 

@@ -20,13 +20,11 @@ The latest version of Part 2 is step13: 4 classes, 1 test class. ShoppingItem is
 
 You can run the tests.
 
-
 You can also checkout the different steps to run the dojo from beginning:
+- [detailed steps of part 1](README_Part1.md)
+- [detailed steps of part 2](README_Part2.md)
 
-
-## Details
-
-### Part 1: Introduction to unit tests [Detailed steps of part 1](README_Part1.md)
+### Part 1: Introduction to unit tests 
 
 In this introduction, we will learn step by step how to write unit tests (test after).
 
@@ -40,7 +38,7 @@ ShoppingBasket contains some methods to get the number of items in the basket, t
 
 We will add unit tests step by step to cover this class.
 
-### Part 2: Introduction to mocks with moq [Detailed steps of part 2](README_Part2.md)
+### Part 2: Introduction to mocks with moq 
 
 In order to introduce the concept of mocks (test double), we add a feature in our simple application: the basket will now ask to a InventoryService if the item is available or not before adding the item into the basket.
 

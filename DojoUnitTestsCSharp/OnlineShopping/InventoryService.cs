@@ -14,7 +14,7 @@ namespace ShoppingBasket
     /// <summary>
     /// The inventory service.
     /// </summary>
-    public class InventoryService
+    public class InventoryService : IInventoryService
     {
         /// <summary>
         /// The is item available.

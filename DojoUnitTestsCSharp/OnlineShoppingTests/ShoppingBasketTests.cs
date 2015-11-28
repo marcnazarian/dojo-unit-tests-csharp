@@ -9,6 +9,8 @@
 
 namespace OnlineShoppingTests
 {
+    using Moq;
+
     using NUnit.Framework;
 
     using ShoppingBasket;
@@ -25,12 +27,20 @@ namespace OnlineShoppingTests
         private ShoppingBasket shoppingBasket;
 
         /// <summary>
+        /// The inventory service mock.
+        /// </summary>
+        private Mock<IInventoryService> inventoryServiceMock;
+
+        /// <summary>
         /// The set up.
         /// </summary>
         [SetUp]
         public void SetUp()
         {
-            this.shoppingBasket = new ShoppingBasket();
+            this.inventoryServiceMock = new Mock<IInventoryService>();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(It.IsAny<ShoppingItem>())).Returns(true);
+
+            this.shoppingBasket = new ShoppingBasket(this.inventoryServiceMock.Object);
         }
 
         /// <summary>
@@ -71,7 +81,7 @@ namespace OnlineShoppingTests
         {
             // arrange
             ShoppingItem myItem = new ShoppingItem();
-
+            
             // act
             this.shoppingBasket.AddItem(myItem);
 

@@ -28,11 +28,20 @@ namespace ShoppingBasket
         private readonly List<ShoppingItem> items;
 
         /// <summary>
+        /// The inventory service.
+        /// </summary>
+        private IInventoryService inventoryService;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShoppingBasket"/> class.
         /// </summary>
-        public ShoppingBasket()
+        /// <param name="inventoryService">
+        /// the inventory service
+        /// </param>
+        public ShoppingBasket(IInventoryService inventoryService)
         {
-            this.items = new List<ShoppingItem>();    
+            this.items = new List<ShoppingItem>();
+            this.inventoryService = inventoryService;
         }
 
         /// <summary>
@@ -43,9 +52,7 @@ namespace ShoppingBasket
         /// </param>
         public void AddItem(ShoppingItem shoppingItem)
         {
-            InventoryService inventoryService = new InventoryService();
-
-            if (!inventoryService.IsItemAvailable(shoppingItem))
+            if (!this.inventoryService.IsItemAvailable(shoppingItem))
             {
                 throw new Exception("Item is not available anymore.");
             }

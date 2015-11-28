@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="IInventoryService.cs" />
     <Compile Include="InventoryService.cs" />
     <Compile Include="ShoppingBasket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

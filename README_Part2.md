@@ -1,3 +1,6 @@
+# Part 2: Detailed steps
+
+
 **Step 10**: Introduced access to database. Unit tests fail.
 
 `git checkout step10`
@@ -14,3 +17,5 @@
 
 `git checkout step13`
 
+
+[Go back to README](README.md)

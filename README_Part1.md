@@ -1,3 +1,8 @@
+[Go back to README](README.md)
+
+
+# Part 1: Detailed steps
+
 **Step 0**: initial project, only code, no tests.
 
 `git checkout step0`
@@ -38,3 +43,6 @@
 
 `git checkout step9`
 
+
+
+[Go back to README](README.md)

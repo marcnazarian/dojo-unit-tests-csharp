@@ -26,63 +26,22 @@ You can also checkout the different steps to run the dojo from beginning:
 
 ## Details
 
-### Part 1: [Introduction to unit tests](README_Part1.md)
+### Part 1: Introduction to unit tests [Detailed steps of part 1](README_Part1.md)
 
-**Step 0**: initial project, only code, no tests.
+In this introduction, we will learn step by step how to write unit tests (test after).
 
-`git checkout step0`
+The project contains only 2 classes: ShoppingBasket and ShoppingItem.
 
-**Step 1**: first (dummy) test. The test is red :)
+ShoppingItem is a very simple class with 4 properties.
 
-`git checkout step1`
+ShoppingBasket contains some methods to get the number of items in the basket, to add an item into the basket, etc.
 
-**Step 2**: make the dummy test passed!
+We will add unit tests step by step to cover this class.
 
-`git checkout step2`
+### Part 2: Introduction to mocks with moq [Detailed steps of part 2](README_Part2.md)
 
-**Step 3**: Add 2 tests (basket is empty after initialization)
+In order to introduce the concept of mocks (test double), we add a feature in our simple applicaiton: the basket will now ask to a InventoryService if the item is available or not before adding the item into the basket.
 
-`git checkout step3`
+This InventoryService will access a database (not implemented for the example) so that the unit tests written into Part 1 are failing. Then We realize that it becomes very hard to test. We then introduce the concept of mock (with Moq).
 
-**Step 4**: Add 1 test (add item into basket)
-
-`git checkout step4`
-
-**Step 5**: Refactored test (add SetUp)
-
-`git checkout step5`
-
-**Step 6**: Add 1 test (add several items into basket)
-
-`git checkout step6`
-
-**Step 7**: Add 2 tests (test get total price of basket)
-
-`git checkout step7`
-
-**Step 8**: Add 1 test (test description of the basket)
-
-`git checkout step8`
-
-**Step 9**: Latest changes.
-
-`git checkout step9`
-
-
-### Part 2: [Introduction to mocks with moq](README_Part2.md)
-
-**Step 10**: Introduced access to database. Unit tests fail.
-
-`git checkout step10`
-
-**Step 11**: Make the unit tests passed (adding an interface, using dependency injection and using Mocks)
-
-`git checkout step11`
-
-**Step 12**: Add 2 units (to test when item is not available)
-
-`git checkout step12`
-
-**Step 13**: Add feature: remove the item from inventory when adding item to shopping cart. Update tests to verify that.
-
-`git checkout step13`
+We make the tests passed, and add some more feature that again access the database, and test them.

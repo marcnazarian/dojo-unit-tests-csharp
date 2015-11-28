@@ -9,7 +9,6 @@
 
 namespace ShoppingBasket
 {
-    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -52,12 +51,10 @@ namespace ShoppingBasket
         /// </param>
         public void AddItem(ShoppingItem shoppingItem)
         {
-            if (!this.inventoryService.IsItemAvailable(shoppingItem))
+            if (this.inventoryService.IsItemAvailable(shoppingItem))
             {
-                throw new Exception("Item is not available anymore.");
+                this.items.Add(shoppingItem);
             }
-            
-            this.items.Add(shoppingItem);
         }
 
         /// <summary>

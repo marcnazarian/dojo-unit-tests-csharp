@@ -77,7 +77,7 @@ namespace OnlineShoppingTests
         /// The can add an item into my basket.
         /// </summary>
         [Test]
-        public void CanAddAnItemIntoMyBasket()
+        public void CanAddAnItemIntoMyBasketWhenItemIsAvailable()
         {
             // arrange
             ShoppingItem myItem = new ShoppingItem();
@@ -87,6 +87,52 @@ namespace OnlineShoppingTests
 
             // assert
             Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(1), "Basket should contain 1 item");
+        }
+
+        /// <summary>
+        /// The should not add item into basket when item is not available.
+        /// </summary>
+        [Test]
+        public void ShouldNotAddItemIntoBasketWhenItemIsNotAvailable()
+        {
+            // arrange
+            ShoppingItem myItem = new ShoppingItem();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(myItem)).Returns(false);
+
+            // act 
+            this.shoppingBasket.AddItem(myItem);
+
+            // assert
+            Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(0), "Basket should not contain any item because item was not available");
+        }
+
+        /// <summary>
+        /// The should not add item into basket when item is not available.
+        /// </summary>
+        [Test]
+        public void ShouldOnlyAddAvailableItemsIntoBasket()
+        {
+            // arrange
+            ShoppingItem availableItem1 = new ShoppingItem();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(availableItem1)).Returns(true);
+
+            ShoppingItem availableItem2 = new ShoppingItem();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(availableItem2)).Returns(true);
+
+            ShoppingItem outOfStockItem3 = new ShoppingItem();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(outOfStockItem3)).Returns(false);
+
+            ShoppingItem outOfStockItem4 = new ShoppingItem();
+            this.inventoryServiceMock.Setup(inventory => inventory.IsItemAvailable(outOfStockItem4)).Returns(false);
+            
+            // act 
+            this.shoppingBasket.AddItem(availableItem1);
+            this.shoppingBasket.AddItem(availableItem2);
+            this.shoppingBasket.AddItem(outOfStockItem3);
+            this.shoppingBasket.AddItem(outOfStockItem4);
+
+            // assert
+            Assert.That(this.shoppingBasket.GetNumberOfItems(), Is.EqualTo(2), "Basket should contain only 2 items because other 2 are out of stock");
         }
 
         /// <summary>
